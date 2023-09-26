@@ -1,7 +1,12 @@
 import discord
 from discord import app_commands
 from discord.ext import commands
+
+#importing other python files
 import responses
+import help_response
+
+#Importing token/api keys
 from dotenv import load_dotenv
 import os
 
@@ -12,14 +17,13 @@ def configure():
 def run_discord_bot():
 
     TOKEN = os.getenv("discord_bot_token")
-    print(TOKEN)
 
     intents = discord.Intents.default()
     intents.message_content = True
 
     bot = commands.Bot(command_prefix = "!", intents = intents)
 
-    #/Command test
+    #Slash Command test
     @bot.event
     async def on_ready():
         print("Bot is Up and Ready!")
@@ -30,14 +34,47 @@ def run_discord_bot():
         except Exception as e:
             print(e)
     
+    #Hello command
     @bot.tree.command(name = "hello")
     async def hello(interaction: discord.Interaction):
         await interaction.response.send_message(f"Hey {interaction.user.mention}! This is a /command!", ephemeral = True)
 
-    #Help command
+    #Help commands
+
+    @bot.tree.command(name = "help")
+    async def help(interaction: discord.Interaction):
+
+        #command user info
+        requester = interaction.user
+        requester_picture = interaction.user.display_avatar
+
+        #adding footer to embed
+        embed = help_response.help_embed()
+        embed.set_footer(
+            text = f"Requested By: @{requester}",
+            icon_url = requester_picture
+        )
+
+        await interaction.response.send_message(content = requester.mention,embed=embed, ephemeral=False)
+
+    bot.remove_command("help") #Remove the old help command
+
     @bot.command()
-    async def plzhelp(ctx):
-        await ctx.send(responses.help_message()) #Sends message back to channel
+    async def help(ctx):
+        embed = help_response.help_embed()
+
+        #command user info
+        requester = ctx.author
+        requester_picture = ctx.author.avatar
+
+        #adding footer to embed
+        embed = help_response.help_embed()
+        embed.set_footer(
+            text = f"Requested By: @{requester}",
+            icon_url = requester_picture
+        )
+
+        await ctx.send(content = requester.mention ,embed = embed) #Sends message back to channel
 
     #Roll random number
     @bot.command()
@@ -67,7 +104,7 @@ def run_discord_bot():
 
         await ctx.send("Your list was created. If you would like to chose an item at random from the list (will be removed) please type in '!randomfromlist'\n"
                        f"Your list: {random_dict[user]}")
-    
+
     @bot.command()
     async def randomfromlist(ctx):
         user = ctx.author

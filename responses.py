@@ -2,33 +2,6 @@ import random
 
 #Bot command functions
 #------------------------------------------------------------
-def help_message(): #When the user calls the help command
-    return(
-
-        #Roll command
-        "!roll - This command allows you to output a random integer between two numbers you choose from.\n"
-        "   Syntax: !roll (start number) (end number)\n"
-
-        #Coinflip command
-        "\n!coinflip - This command flips a coin for you\n"
-        "   Syntax: !coinflip\n"
-
-        #Spinwheel command
-        '\n!spinwheel - This command will "spin a wheel" and output you the order in which the results landed\n'
-        "   Syntax: !spinwheel (option 1) (option 2) (option 3) etc.\n"
-
-        #----------------------------RANDOM FROM LIST-------------------------------
-        "\n                                                     ------------List Commands------------"
-        "\n!createlist - This command will create a list for you that you can use the below commands to interact with\n"
-        "   Syntax: !create list (option 1) (option 2) (option 3) etc.\n"
-        
-        "\n!randomfromlist - Outputs a random item from 'your list'"
-        "   Syntax: !randomfromlist\n"
-
-        "\n!showlist - Shows you 'your list'"
-        "   Syntax: !showlist\n"
-           )
-
 def roll(num_1, num_2): #Roll random number
 
     num_1 = int(num_1)
