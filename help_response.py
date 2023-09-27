@@ -30,8 +30,8 @@ def help_embed():
 
     #Coinflip command
     embed.add_field(
-        name = "!coinflip",
-        value = "Flips a coin and gives you heads or tails",
+        name = "!coinflip or !coinflip (tts on or off)",
+        value = "Flips a coin and gives you heads or tails. If you just say !coinflip will flip a coin and not tts. If you put something after the !coinflip command, tts will be activated.",
         inline = False
     )
     

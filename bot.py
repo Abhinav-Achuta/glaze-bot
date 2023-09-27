@@ -83,8 +83,11 @@ def run_discord_bot():
 
     #Flip a coin
     @bot.command()
-    async def coinflip(ctx):
-        await ctx.send(responses.coinflip())
+    async def coinflip(ctx, msg = None):
+
+        output_text, tts_on_or_off = responses.coinflip(msg)
+
+        await ctx.send(f"{output_text}", tts = tts_on_or_off)
 
     #Spin a wheel
     @bot.command()

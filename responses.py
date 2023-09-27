@@ -13,17 +13,23 @@ def roll(num_1, num_2): #Roll random number
 
     return output_string
 
-def coinflip(): #Flip a coin
+def coinflip(msg = None): #Flip a coin
     heads_or_tails = {
         1: "Heads",
         2: "Tails"
     }
+    
+    tts_on_or_off = False
+
+    if msg != None:
+        tts_on_or_off = True
+
 
     selection = random.randint(1,2)
 
     output_string = (f"You got {heads_or_tails[selection]}")
 
-    return output_string
+    return output_string, tts_on_or_off
 
 def spin_wheel(user_input, author): #Spins a wheel and outputs the order of results
 
