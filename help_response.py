@@ -45,7 +45,7 @@ def help_embed():
     #Random from list commands
     embed.add_field(
         name = "__List commands__",
-        value = "Commands to create and interact with a list",
+        value = "*Commands to create and interact with a list*",
         inline = False
     )
 
