@@ -1,9 +1,6 @@
-file = open("token.txt", "r")
-read = file.readlines()
+test_list = ["happy", "for", "you"]
 
-TOKEN = read[0]
-print(TOKEN)
+del test_list["happy"]
 
-# with open("token.txt") as token_file:
-#     TOKEN = token_file.readline(0)
-#     print(TOKEN)
+for item in test_list:
+    print(item)

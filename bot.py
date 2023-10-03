@@ -123,6 +123,44 @@ def run_discord_bot():
         user = ctx.author
         await ctx.send(responses.show_list(random_dict, user))
 
+    @bot.command()
+    async def addtolist(ctx, *args):
+        user = ctx.author
+        user_input = responses.make_options_into_list(args)
+
+        if user not in random_dict:
+            random_dict[user] = []
+
+        for i in range(len(user_input)):
+            random_dict[user].append(user_input[i])
+
+        await ctx.send(f"Your option(s) were added!\nYour list: {random_dict[user]}")
+
+    @bot.command()
+    async def removefromlist(ctx, *args):
+        user = ctx.author
+        user_input = responses.make_options_into_list(args)
+
+        if user not in random_dict:
+            random_dict[user] = []
+
+        for item in user_input:
+            if item in random_dict[user]:
+                del random_dict[user][item]
+
+        if random_dict[user] == []:
+            await ctx.send(f"The items in your list were removed it is now empty.")
+        else:
+            await ctx.send(f"The items you requested were removed from your list.\nYour list: {random_dict}")
+    
+    @bot.command()
+    async def clearlist(ctx):
+        user = ctx.author
+
+        random_dict[user] = []
+
+        await ctx.send("Your list was cleared!")
+
 
     #Runs the bot
     bot.run(TOKEN)

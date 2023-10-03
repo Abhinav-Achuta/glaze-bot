@@ -70,4 +70,25 @@ def help_embed():
         inline = False
     )
 
-    return embed
+    #Add item(s) to list
+    embed.add_field(
+        name = "!addtolist (item_1) (item_2)",
+        value = 'Adds item(s) to your list instead of replacing the list. Similar to the create list option, if you want an item with more than one word surround the words with quotes.',
+        inline = False
+    )
+
+    #Remove item(s) from list
+    embed.add_field(
+        name = "!removefromlist (item_1) (item_2)",
+        value = 'Removes item(s) from your list instead of replacing the list. Similar to the create list option, if you want an item with more than one word surround the words with quotes.',
+        inline = False
+    )
+
+    #Clearlist
+    embed.add_field(
+        name = "!clearlist",
+        value = "Clears all itmes in your list.",
+        inline = False
+    )
+
+    return embed #New help embeds go above here

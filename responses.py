@@ -24,7 +24,6 @@ def coinflip(msg = None): #Flip a coin
     if msg != None:
         tts_on_or_off = True
 
-
     selection = random.randint(1,2)
 
     output_string = (f"You got {heads_or_tails[selection]}")
