@@ -91,4 +91,17 @@ def help_embed():
         inline = False
     )
 
+    #League of Legends commands
+    embed.add_field(
+        name = "__LoL commands__",
+        value = "*Commands that will interact with riot api to produce results. Please give the bot some time to fetch data.*",
+        inline = False
+    )
+
+    embed.add_field(
+        name = "!lolwr (username) (tag)",
+        value = "This command will output your champions played in the last 20 games and their win rates. *if your username has spaces, please surround it in quotes, surround the phrase with quotes*",
+        inline = True
+    )
+
     return embed #New help embeds go above here

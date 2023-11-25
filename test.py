@@ -1,6 +1,6 @@
-test_list = ["happy", "for", "you"]
+test_list = [55, 20, 30, 40]
 
-del test_list["happy"]
+for i in range(len(test_list)):
+        test_list[i] = str(test_list[i]) + "%"
 
-for item in test_list:
-    print(item)
+print(test_list)

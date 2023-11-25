@@ -5,6 +5,7 @@ from discord.ext import commands
 #importing other python files
 import responses
 import help_response
+import LOL_sort_games_wr
 
 #Importing token/api keys
 from dotenv import load_dotenv
@@ -74,7 +75,7 @@ def run_discord_bot():
             icon_url = requester_picture
         )
 
-        await ctx.send(content = requester.mention ,embed = embed) #Sends message back to channel
+        await ctx.send(content = requester.mention, embed = embed) #Sends message back to channel
 
     #Roll random number
     @bot.command()
@@ -161,6 +162,42 @@ def run_discord_bot():
 
         await ctx.send("Your list was cleared!")
 
+    #LOL wr command
+    @bot.command()
+    async def lolwr(ctx, user_name, tag):
+        user = ctx.author
+
+        LOL_sort_games_wr.configure()
+
+        champ_list, win_rate_percent, games_played = LOL_sort_games_wr.main(user_name, tag)
+
+        embed = discord.Embed(title = f'Champion win rates in the last 20 games from highest to lowest for "{user_name}#{tag}".')
+
+        embed.set_author(
+            name = "glaze bot",
+            icon_url = "https://i.imgur.com/rCkUJyG.jpg",
+            color = 0xE6BEB6
+        )
+
+        embed.add_field(
+            name = "Champs",
+            value = champ_list,
+            inline = True
+        )
+
+        embed.add_field(
+            name = "Win Rate",
+            value = win_rate_percent,
+            inline = True
+        )
+
+        embed.add_field(
+            name = "Games Played",
+            value = games_played,
+            inline = True
+        )
+
+        await ctx.send(content = user.mention, embed = embed)
 
     #Runs the bot
     bot.run(TOKEN)
