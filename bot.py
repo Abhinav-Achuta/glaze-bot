@@ -176,7 +176,6 @@ def run_discord_bot():
         embed.set_author(
             name = "glaze bot",
             icon_url = "https://i.imgur.com/rCkUJyG.jpg",
-            color = 0xE6BEB6
         )
 
         embed.add_field(
