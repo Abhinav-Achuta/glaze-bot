@@ -51,7 +51,6 @@ This package allows for both Discord token and riot API token to be hidden from 
 This is a package that allows the user to send "requests" online for data. In this project, it was used to interact with the Riot Games API for data collection purposes. Based on the user's username and tagline, the project can request match data for that specific individual. While the data that is given back has many stats the only data that is currently looked at is champion data, number of wins, and games played to calculate the win rate per champion.
 
 ## Design of packages, classes, methods, functions, and iterations between them
-
 When a command is called in the discord server using the "!" key, the discord bot (using discord.py) will read the message and cross reference with code in the bot.py file. If there is command available that has the same syntax as the entered command, the code will then process the data to perform the requested function by communicating with other files within the parent directory as necessary. For example, if the command "!lolwr Naoki abhi" is called, the code will then receive "Naoki" and "abhi" as data for the !lolwr command. This command will follow the following pathway
 1. Enable the Riot games key to be used in the LOL_sort_games_wr.py file.
 2. Request data using the requests package to receive data for the user Naoki#abhi
@@ -61,3 +60,17 @@ When a command is called in the discord server using the "!" key, the discord bo
 6. Send data back to the bot.py file
 7. Format the data using the embed feature available in discord.py
 8. Send the data back to the user through the discord server
+All the commands will follow a path of sorts communicating with necessary files to return the information requested. The data is stored in a combination of lists, dictionaries, and classes for data processing.
+
+## Current expected weaknesses
+While the discord bot works amazingly overall, the only known weakness as of now is the time it takes for the "!lolwr" command. This command takes about 10 seconds to fully finish as it has to request data multiple different times from the Riot Games API to procure all necessary information. This data then has to be processed which doesn't take much time but still adds to the time taken for the command.
+
+## Data structures and algorithms used
+- Lists
+   - Can be seen throughout all the code as they are used for data sorting
+- Dictionaries
+   - Can be seen throughout the code as they are used for data sorting and collection
+- Classes
+   - Can be seen in the LOL_sort_games_wr.py file. The class "Champion" was created to help store data collected from the Riot Games API in a usable manner.
+- Bubble sort
+   - This algorithm was used in the LOL_sort_games_wr.py file to sort the Champion data by win rates in order from greatest to lowest
