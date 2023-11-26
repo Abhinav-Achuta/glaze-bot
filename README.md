@@ -1,18 +1,24 @@
-# Glaze-bot: A discord bot with some fun features
+# Glaze-bot: Your Competitive analysis Discord Ally for Gamers
+
 ## Introduction
-This is a bot that has several features made for fun such as spinning wheels, rolling for a random number, coinflipping, and even some features to interact with the Riotgames API to retrieve League of Legends summoner data. This bot is a work in progress and more features will be added (suggestions are welcome).
+Greetings, League of Legends enthusiasts! I'm Glaze, a versatile bot with a plethora of features to enhance your gaming experience. Indulge in a spin of the wheel, roll for a random number, or toss a virtual coin to test your luck. For the avid Summoners among you, I've tapped into the Riotgames API to provide insights into your League of Legends adventures. Explore your summoner data, delve into champion statistics, and discover strategies to dominate the Rift. I'm continuously evolving, so feel free to suggest new features to elevate this bot's capabilities. Let's embark on an exciting journey together!
 
 ## About the project
 This project uses discord.py and the Riotgames API to function. 
-Features that are currently present
-- Roll for a value between chosen numbers
-- Flip a coin
-- Spin a wheel based on chosen data
-- Create a list from which you can pull data at random
-- Get the win rate(s) of champions played in your last 20 games sorted by win rate
+
+Want to improve your performance on the rift?
+- Use the Riotgames API to delve into your summoner data
+- Uncover hidden insights into your champion statistics and make informed decisions on who to play
+
+Conflicted on what decision to make?
+- Spin the wheel of fortune and let destiny decide your next move
+- Toss a virtual coin and leave it up to chance
+- Roll for a random number and leave it up to fate
+
+I'm continuously evolving and eager to incorporate your feedback and suggestions. Share your ideas and let's shape this bot into the ultimate gaming companion.
 
 ## Installation and steps required to run the project
-There are a few things necessary to be able to run and set up your own discord bot. The first is to install the **discord.py** package, the **requests** package, and the **dotenv** package. To install these packages, simply run the following lines in your terminal one at a time.
+There are a few things necessary to be able to run and set up your own Discord bot. The first is to install the **discord.py** package, the **requests** package, and the **dotenv** package. To install these packages, simply run the following lines in your terminal one at a time.
 ```
 pip install discord.py
 ```
