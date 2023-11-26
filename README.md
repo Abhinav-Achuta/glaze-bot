@@ -53,7 +53,7 @@ The discord.py package was used to interact with the Discord API which was used 
 ### Dotenv
 This package allows for both Discord token and riot API token to be hidden from the public eye. It will be stored locally so other people can not use your keys for nefarious purposes.
 
-### Requests package
+### Requests
 This is a package that allows the user to send "requests" online for data. In this project, it was used to interact with the Riot Games API for data collection purposes. Based on the user's username and tagline, the project can request match data for that specific individual. While the data that is given back has many stats the only data that is currently looked at is champion data, number of wins, and games played to calculate the win rate per champion.
 
 ## Design of packages, classes, methods, functions, and iterations between them
