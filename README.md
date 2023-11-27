@@ -1,4 +1,4 @@
-# Glaze-bot: Your Competitive analysis Discord Ally for Gamers
+# [Glaze-bot: Your Competitive analysis Discord Ally for Gamers](https://github.com/Abhinav-Achuta/glaze-bot/)
 
 ## Introduction
 Greetings, League of Legends enthusiasts! I'm Glaze, a versatile bot with a plethora of features to enhance your gaming experience. Indulge in a spin of the wheel, roll for a random number, or toss a virtual coin to test your luck. For the avid Summoners among you, I've tapped into the Riotgames API to provide insights into your League of Legends adventures. Explore your summoner data, delve into champion statistics, and discover strategies to dominate the Rift. I'm continuously evolving, so feel free to suggest new features to elevate this bot's capabilities. Let's embark on an exciting journey together!
