@@ -18,6 +18,7 @@ Conflicted on what decision to make?
 I'm continuously evolving and eager to incorporate your feedback and suggestions. Share your ideas and let's shape this bot into the ultimate gaming companion.
 
 ## Installation and steps required to run the project
+[Video installation guide:](https://youtu.be/PnfxnF2QMmo)
 There are a few things necessary to be able to run and set up your own Discord bot. The first is to install the **discord.py** package, the **requests** package, and the **dotenv** package. To install these packages, simply run the following lines in your terminal one at a time.
 ```
 pip install discord.py
