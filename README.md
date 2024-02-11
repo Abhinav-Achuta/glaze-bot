@@ -18,6 +18,7 @@ Conflicted on what decision to make?
 I'm continuously evolving and eager to incorporate your feedback and suggestions. Share your ideas and let's shape this bot into the ultimate gaming companion.
 
 ## Installation and steps required to run the project
+[Video installation guide:](https://youtu.be/PnfxnF2QMmo)
 There are a few things necessary to be able to run and set up your own Discord bot. The first is to install the **discord.py** package, the **requests** package, and the **dotenv** package. To install these packages, simply run the following lines in your terminal one at a time.
 ```
 pip install discord.py
@@ -67,6 +68,7 @@ When a command is called in the discord server using the "!" key, the discord bo
 7. Format the data using the embed feature available in discord.py
 8. Send the data back to the user through the discord server
 All the commands will follow a path of sorts communicating with necessary files to return the information requested. The data is stored in a combination of lists, dictionaries, and classes for data processing.
+- Our code for each implementation works in a very similar manner as described above. The bot.py file uses discord.py to read for when a user inputs a command. This will send information that was inputted to other files required in the main directory and receive relevant data to output back to the user.
 
 ## Current expected weaknesses
 While the discord bot works amazingly overall, the only known weakness as of now is the time it takes for the "!lolwr" command. This command takes about 10 seconds to fully finish as it has to request data multiple different times from the Riot Games API to procure all necessary information. This data then has to be processed which doesn't take much time but still adds to the time taken for the command.
