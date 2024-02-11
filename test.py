@@ -1,3 +1,5 @@
+##Added possibility for slash commands, test
+
 from bot import *
 from LOL_sort_games_wr import *
 from responses import *
